@@ -1,0 +1,5 @@
+/* Add this CSS to set the badge color as green */
+.badge.badgecolor {
+    background-color: #28a745;
+    font-size: 0.9em; /* Adjust the font size as needed */
+}

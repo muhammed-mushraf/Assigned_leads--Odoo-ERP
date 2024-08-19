@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="IconSystrayDropdown">
+        <div class="SystrayMenuContainer">
+            <div class="o_MessagingMenu dropdown ">
+                <div class="o-dropdown dropdown o_debug_manager o-dropdown--no-caret">
+                    <a class="o_MessagingMenu_toggler dropdown-toggle o-no-caret o-dropdown--narrow" href="#"
+                       title="Systray Dropdown" role="button" aria-haspopup="true" aria-expanded="">
+                        <i id='create_so' class="fa fa-bell"/>
+                        <span class="badge badgecolor" id="systray_badge"></span>
+                    </a>
+                </div>
+                <div id="systray_notif" class="o_MessagingMenu_dropdownMenu o-dropdown-menu">
+                    <div class="container" style="padding-top: 4%;">
+                        <div class="systray_notification">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+    <t t-name="SystrayDetails">
+        <h3 style="text-align: center;">Assigned Lead</h3>
+        <t t-foreach="assigned_lead_info" t-as="lead">
+            <div class="o_NotificationListItem" t-att-data-lead-id="lead.leadId">
+                <div class="o_NotificationList_separator flex-shrink-0 w-100 border-bottom">
+                    <span style="font-size: larger; font-weight: bold;">
+                        <t t-esc="lead.name"/>
+                    </span>
+                    <br/>
+                    Price:
+                    <t t-esc="lead.price"/>
+                    <br/>
+                    Customer:
+                    <t t-esc="lead.customer"/>
+                </div>
+            </div>
+        </t>
+    </t>
+</templates>
